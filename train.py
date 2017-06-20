@@ -9,7 +9,7 @@ import time
 import math
 file_path = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(file_path, "data")
-train_dir = os.path.join(file_path, "ckpt")
+train_dir = os.path.join(file_path, "model")
 
 class LargeConfig(object):
     learning_rate = 1.0
