@@ -126,7 +126,7 @@ def create_model(session, forward_only):
   # dtype = tf.float32
   initializer = tf.random_uniform_initializer(-config.init_scale, config.init_scale)
   # Adding unique variable scope to model
-  with tf.variable_scope(FLAGS.headline_scope_name, reuse=None, initializer=initializer):
+  with tf.variable_scope(FLAGS.train_scope_name, reuse=None, initializer=initializer):
     model = seq2seq.Seq2SeqModel(
         FLAGS.vocab_size,
         FLAGS.vocab_size,
