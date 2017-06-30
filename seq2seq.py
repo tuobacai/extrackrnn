@@ -1,7 +1,11 @@
-import tensorflow as tf
-import numpy as np
 import random
+
+import numpy as np
+import tensorflow as tf
+
 import data_utils
+
+
 class Seq2SeqModel(object):
     def __init__(self,
                  source_vocab_size,

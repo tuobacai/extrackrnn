@@ -1,12 +1,15 @@
 #coding:utf-8
-import tensorflow as tf
+import math
 import os
 import sys
+import time
+
+import numpy as np
+import tensorflow as tf
+
 import data_utils
 import seq2seq
-import numpy as np
-import time
-import math
+
 file_path = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(file_path, "data")
 train_dir = os.path.join(file_path, "model")
@@ -122,7 +125,7 @@ def create_model(session, forward_only):
 
 def train():
     print("Preparing Headline data in %s" % FLAGS.data_dir)
-    src_train, dest_train, src_dev, dest_dev, _, _ =data_utils.prepare_headline_data(
+    src_train, dest_train, src_dev, dest_dev, _, _ = data_utils.prepare_headline_data(
         FLAGS.data_dir,FLAGS.vocab_size
     )
     print ("Reading development and training data (limit: %d)."
