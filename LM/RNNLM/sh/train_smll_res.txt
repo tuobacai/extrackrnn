@@ -1,0 +1,215 @@
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcublas.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:126] Couldn't open CUDA library libcudnn.so.5. LD_LIBRARY_PATH:
+I tensorflow/stream_executor/cuda/cuda_dnn.cc:3517] Unable to load cuDNN DSO
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcufft.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcurand.so.8.0 locally
+======== FLAGS ========
+vocab_size=100
+learning_rate_decay_factor=0.83
+dump_lstm_output=dump_lstm.pb
+test_path=./test
+keep_prob=0.5
+patience=10
+num_layers=2
+size=20
+saved_model_dir=../model/model_small/saved_model
+print_beam=False
+dev_path=../data/small/valid
+model_dir=../model/model_small
+summary_dir=../model/model_small/saved_model
+force_decode_output=force_decode.txt
+beam_step=3
+profile=False
+saveCheckpoint=True
+fromScratch=True
+learning_rate=0.5
+L=15
+batch_size=4
+N=000
+topk=3
+data_cache_dir=../model/model_small/data_cache
+max_gradient_norm=5.0
+no_repeat=False
+n_bucket=3
+allow_growth=False
+withAdagrad=True
+mode=TRAIN
+beam_size=10
+train_path=../data/small/train
+n_epoch=100
+======== READ DATA ========
+Creating vocabulary ../model/model_small/data_cache/vocab from data ../data/small/train,../data/small/valid
+../data/small/train
+26
+../data/small/valid
+26
+Tokenizing data in ../data/small/train
+Tokenizing data in ../data/small/valid
+read raw data from ../model/model_small/data_cache/train.ids
+read raw data from ../model/model_small/data_cache/dev.ids
+running_sum [(length, count)] :
+[(3, 55), (4, 109), (5, 158), (6, 224), (7, 278), (8, 325), (9, 382), (10, 449), (11, 496), (12, 547), (13, 591), (14, 647), (15, 716), (16, 772), (17, 823), (18, 871), (19, 917), (20, 986), (21, 1043), (22, 1100)]
+======== REPORT ========
+real_vocab_size: 30
+_buckets: [6, 10, 15]
+Train:
+total: 655.0
+bucket sizes: [205, 205, 245]
+Dev:
+total: 61
+bucket sizes: [19, 20, 22]
+Steps_per_epoch: 163
+Total_steps:16300
+Steps_per_checkpoint: 81
+======== IN TENSORFLOW ========
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties:
+name: Tesla M40
+major: 5 minor: 2 memoryClockRate (GHz) 1.112
+pciBusID 0000:82:00.0
+Total memory: 11.17GiB
+Free memory: 11.07GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla M40, pci bus id: 0000:82:00.0)
+======== MODEL/SUMMARY/WRITER ========
+Creating Model.. (this can take a few minutes)
+Created model with fresh parameters.
+Creating ModelSummary
+Creating tf.summary.FileWriter
+======== All Variables ========
+Variable:0
+Variable_1:0
+Variable_2:0
+input_embeddiing:0
+output_embeddiing:0
+output_bias:0
+rnn/multi_rnn_cell/cell_0/lstm_cell/weights:0
+rnn/multi_rnn_cell/cell_0/lstm_cell/biases:0
+rnn/multi_rnn_cell/cell_1/lstm_cell/weights:0
+rnn/multi_rnn_cell/cell_1/lstm_cell/biases:0
+input_embeddiing/Adagrad:0
+output_embeddiing/Adagrad:0
+output_bias/Adagrad:0
+rnn/multi_rnn_cell/cell_0/lstm_cell/weights/Adagrad:0
+rnn/multi_rnn_cell/cell_0/lstm_cell/biases/Adagrad:0
+rnn/multi_rnn_cell/cell_1/lstm_cell/weights/Adagrad:0
+rnn/multi_rnn_cell/cell_1/lstm_cell/biases/Adagrad:0
+======== Data Iterators ========
+Itetype: withRandom
+======== TRAIN ========
+[STEP 30] StepTime: 0.06 sec Speed: 544.27 targets/s Total_targets: 5940
+[STEP 60] StepTime: 0.02 sec Speed: 1398.27 targets/s Total_targets: 5940
+[CHECKPOINT 1 STEP 81] Learning_rate: 0.5000 Dev_ppx: 25.06 Train_ppx: 26.70
+[CHECKPOINT 1 STEP 81] Model saved using 0.04 sec at ../model/model_small/saved_model/model
+[CHECKPOINT 1 STEP 81] Model saved using 0.04 sec at ../model/model_small/saved_model/best
+[STEP 90] StepTime: 0.03 sec Speed: 1322.30 targets/s Total_targets: 5940
+[STEP 120] StepTime: 0.02 sec Speed: 1391.68 targets/s Total_targets: 5940
+[STEP 150] StepTime: 0.02 sec Speed: 1374.30 targets/s Total_targets: 5940
+[CHECKPOINT 2 STEP 162] Learning_rate: 0.5000 Dev_ppx: 25.16 Train_ppx: 25.27
+[CHECKPOINT 2 STEP 162] Model saved using 0.01 sec at ../model/model_small/saved_model/model
+[STEP 180] StepTime: 0.02 sec Speed: 1394.96 targets/s Total_targets: 5940
+[STEP 210] StepTime: 0.02 sec Speed: 1390.80 targets/s Total_targets: 5940
+[STEP 240] StepTime: 0.03 sec Speed: 1405.62 targets/s Total_targets: 5940
+[CHECKPOINT 3 STEP 243] Learning_rate: 0.5000 Dev_ppx: 25.07 Train_ppx: 25.50
+[CHECKPOINT 3 STEP 243] Model saved using 0.01 sec at ../model/model_small/saved_model/model
+[STEP 270] StepTime: 0.02 sec Speed: 1399.23 targets/s Total_targets: 5940
+[STEP 300] StepTime: 0.02 sec Speed: 1382.83 targets/s Total_targets: 5940
+[CHECKPOINT 4 STEP 324] Learning_rate: 0.5000 Dev_ppx: 24.93 Train_ppx: 25.17
+[CHECKPOINT 4 STEP 324] Model saved using 0.01 sec at ../model/model_small/saved_model/model
+[CHECKPOINT 4 STEP 324] Model saved using 0.01 sec at ../model/model_small/saved_model/best
+[STEP 330] StepTime: 0.02 sec Speed: 1445.43 targets/s Total_targets: 5940
+[STEP 360] StepTime: 0.03 sec Speed: 1418.72 targets/s Total_targets: 5940
+[STEP 390] StepTime: 0.02 sec Speed: 1349.46 targets/s Total_targets: 5940
+[CHECKPOINT 5 STEP 405] Learning_rate: 0.5000 Dev_ppx: 24.97 Train_ppx: 25.06
+[CHECKPOINT 5 STEP 405] Model saved using 0.01 sec at ../model/model_small/saved_model/model
+[STEP 420] StepTime: 0.02 sec Speed: 1457.94 targets/s Total_targets: 5940
+[STEP 450] StepTime: 0.02 sec Speed: 1378.61 targets/s Total_targets: 5940
+[STEP 480] StepTime: 0.03 sec Speed: 1464.88 targets/s Total_targets: 5940
+[CHECKPOINT 6 STEP 486] Learning_rate: 0.5000 Dev_ppx: 24.75 Train_ppx: 25.18
+[CHECKPOINT 6 STEP 486] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[CHECKPOINT 6 STEP 486] Model saved using 0.01 sec at ../model/model_small/saved_model/best
+[STEP 510] StepTime: 0.02 sec Speed: 1395.13 targets/s Total_targets: 5940
+[STEP 540] StepTime: 0.02 sec Speed: 1350.20 targets/s Total_targets: 5940
+[CHECKPOINT 7 STEP 567] Learning_rate: 0.5000 Dev_ppx: 25.09 Train_ppx: 24.60
+[CHECKPOINT 7 STEP 567] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 570] StepTime: 0.02 sec Speed: 1371.92 targets/s Total_targets: 5940
+[STEP 600] StepTime: 0.02 sec Speed: 1371.34 targets/s Total_targets: 5940
+[STEP 630] StepTime: 0.02 sec Speed: 1416.57 targets/s Total_targets: 5940
+[CHECKPOINT 8 STEP 648] Learning_rate: 0.5000 Dev_ppx: 24.80 Train_ppx: 25.14
+[CHECKPOINT 8 STEP 648] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 660] StepTime: 0.02 sec Speed: 1574.74 targets/s Total_targets: 5940
+[STEP 690] StepTime: 0.02 sec Speed: 1340.01 targets/s Total_targets: 5940
+[STEP 720] StepTime: 0.02 sec Speed: 1407.55 targets/s Total_targets: 5940
+[CHECKPOINT 9 STEP 729] Learning_rate: 0.5000 Dev_ppx: 24.94 Train_ppx: 24.84
+[CHECKPOINT 9 STEP 729] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 750] StepTime: 0.02 sec Speed: 1391.57 targets/s Total_targets: 5940
+[STEP 780] StepTime: 0.02 sec Speed: 1476.50 targets/s Total_targets: 5940
+[STEP 810] StepTime: 0.02 sec Speed: 1423.79 targets/s Total_targets: 5940
+[CHECKPOINT 10 STEP 810] Learning_rate: 0.5000 Dev_ppx: 24.71 Train_ppx: 25.17
+[CHECKPOINT 10 STEP 810] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[CHECKPOINT 10 STEP 810] Model saved using 0.01 sec at ../model/model_small/saved_model/best
+[STEP 840] StepTime: 0.02 sec Speed: 1368.55 targets/s Total_targets: 5940
+[STEP 870] StepTime: 0.03 sec Speed: 1404.12 targets/s Total_targets: 5940
+[CHECKPOINT 11 STEP 891] Learning_rate: 0.5000 Dev_ppx: 24.85 Train_ppx: 25.08
+[CHECKPOINT 11 STEP 891] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 900] StepTime: 0.02 sec Speed: 1354.25 targets/s Total_targets: 5940
+[STEP 930] StepTime: 0.02 sec Speed: 1418.50 targets/s Total_targets: 5940
+[STEP 960] StepTime: 0.02 sec Speed: 1452.52 targets/s Total_targets: 5940
+[CHECKPOINT 12 STEP 972] Learning_rate: 0.5000 Dev_ppx: 24.57 Train_ppx: 24.74
+[CHECKPOINT 12 STEP 972] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[CHECKPOINT 12 STEP 972] Model saved using 0.01 sec at ../model/model_small/saved_model/best
+[STEP 990] StepTime: 0.02 sec Speed: 1374.76 targets/s Total_targets: 5940
+[STEP 1020] StepTime: 0.02 sec Speed: 1428.16 targets/s Total_targets: 5940
+[STEP 1050] StepTime: 0.02 sec Speed: 1337.62 targets/s Total_targets: 5940
+[CHECKPOINT 13 STEP 1053] Learning_rate: 0.5000 Dev_ppx: 24.75 Train_ppx: 24.44
+[CHECKPOINT 13 STEP 1053] Model saved using 0.01 sec at ../model/model_small/saved_model/model
+[STEP 1080] StepTime: 0.02 sec Speed: 1396.96 targets/s Total_targets: 5940
+[STEP 1110] StepTime: 0.02 sec Speed: 1437.20 targets/s Total_targets: 5940
+[CHECKPOINT 14 STEP 1134] Learning_rate: 0.5000 Dev_ppx: 24.95 Train_ppx: 25.03
+[CHECKPOINT 14 STEP 1134] Model saved using 0.01 sec at ../model/model_small/saved_model/model
+[STEP 1140] StepTime: 0.02 sec Speed: 1444.16 targets/s Total_targets: 5940
+[STEP 1170] StepTime: 0.02 sec Speed: 1446.25 targets/s Total_targets: 5940
+[STEP 1200] StepTime: 0.02 sec Speed: 1397.94 targets/s Total_targets: 5940
+[CHECKPOINT 15 STEP 1215] Learning_rate: 0.5000 Dev_ppx: 24.90 Train_ppx: 24.74
+[CHECKPOINT 15 STEP 1215] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 1230] StepTime: 0.02 sec Speed: 1385.34 targets/s Total_targets: 5940
+[STEP 1260] StepTime: 0.02 sec Speed: 1341.67 targets/s Total_targets: 5940
+[STEP 1290] StepTime: 0.03 sec Speed: 1413.76 targets/s Total_targets: 5940
+[CHECKPOINT 16 STEP 1296] Learning_rate: 0.5000 Dev_ppx: 24.78 Train_ppx: 24.83
+[CHECKPOINT 16 STEP 1296] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 1320] StepTime: 0.02 sec Speed: 1338.21 targets/s Total_targets: 5940
+[STEP 1350] StepTime: 0.03 sec Speed: 1485.59 targets/s Total_targets: 5940
+[CHECKPOINT 17 STEP 1377] Learning_rate: 0.5000 Dev_ppx: 24.78 Train_ppx: 25.05
+[CHECKPOINT 17 STEP 1377] Model saved using 0.01 sec at ../model/model_small/saved_model/model
+[STEP 1380] StepTime: 0.02 sec Speed: 1431.13 targets/s Total_targets: 5940
+[STEP 1410] StepTime: 0.02 sec Speed: 1430.86 targets/s Total_targets: 5940
+[STEP 1440] StepTime: 0.02 sec Speed: 1370.62 targets/s Total_targets: 5940
+[CHECKPOINT 18 STEP 1458] Learning_rate: 0.5000 Dev_ppx: 24.74 Train_ppx: 24.57
+[CHECKPOINT 18 STEP 1458] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 1470] StepTime: 0.02 sec Speed: 1479.29 targets/s Total_targets: 5940
+[STEP 1500] StepTime: 0.02 sec Speed: 1506.44 targets/s Total_targets: 5940
+[STEP 1530] StepTime: 0.02 sec Speed: 1370.17 targets/s Total_targets: 5940
+[CHECKPOINT 19 STEP 1539] Learning_rate: 0.5000 Dev_ppx: 24.79 Train_ppx: 24.99
+[CHECKPOINT 19 STEP 1539] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 1560] StepTime: 0.02 sec Speed: 1396.57 targets/s Total_targets: 5940
+[STEP 1590] StepTime: 0.02 sec Speed: 1513.48 targets/s Total_targets: 5940
+[STEP 1620] StepTime: 0.02 sec Speed: 1367.85 targets/s Total_targets: 5940
+[CHECKPOINT 20 STEP 1620] Learning_rate: 0.5000 Dev_ppx: 24.78 Train_ppx: 24.59
+[CHECKPOINT 20 STEP 1620] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 1650] StepTime: 0.02 sec Speed: 1375.57 targets/s Total_targets: 5940
+[STEP 1680] StepTime: 0.02 sec Speed: 1404.40 targets/s Total_targets: 5940
+[CHECKPOINT 21 STEP 1701] Learning_rate: 0.5000 Dev_ppx: 24.83 Train_ppx: 24.36
+[CHECKPOINT 21 STEP 1701] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+[STEP 1710] StepTime: 0.02 sec Speed: 1426.70 targets/s Total_targets: 5940
+[STEP 1740] StepTime: 0.03 sec Speed: 1399.54 targets/s Total_targets: 5940
+[STEP 1770] StepTime: 0.02 sec Speed: 1407.79 targets/s Total_targets: 5940
+[CHECKPOINT 22 STEP 1782] Learning_rate: 0.5000 Dev_ppx: 24.73 Train_ppx: 24.78
+[CHECKPOINT 22 STEP 1782] Model saved using 0.02 sec at ../model/model_small/saved_model/model
+Training finished. Running out of patience.
