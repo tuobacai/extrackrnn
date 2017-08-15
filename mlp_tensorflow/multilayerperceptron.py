@@ -11,6 +11,7 @@ class MultilayerPerceptron(object):
 
         self.n_hidden_1=256
         self.n_hidden_2=512
+        self.n_hidden_3 =1024
         self.n_input=784
         self.n_classes=10
 
@@ -40,13 +41,13 @@ class MultilayerPerceptron(object):
             # you can change
             'h1': tf.Variable(tf.random_normal([self.n_input, self.n_hidden_1])),
             'h2': tf.Variable(tf.random_normal([self.n_hidden_1, self.n_hidden_2])),
-            'h3':tf.Variable(tf.random_normal([self.n_hidden_1,self.n_hidden_2])),
-            'out': tf.Variable(tf.random_normal([self.n_hidden_2, self.n_classes]))
+            'h3':tf.Variable(tf.random_normal([self.n_hidden_2,self.n_hidden_3])),
+            'out': tf.Variable(tf.random_normal([self.n_hidden_3, self.n_classes]))
         }
         biases = {
             'b1': tf.Variable(tf.random_normal([self.n_hidden_1])),
             'b2': tf.Variable(tf.random_normal([self.n_hidden_2])),
-            'b3':tf.Variable(tf.random_normal([self.n_hidden_2])),
+            'b3':tf.Variable(tf.random_normal([self.n_hidden_3])),
             'out': tf.Variable(tf.random_normal([self.n_classes]))
         }
 
