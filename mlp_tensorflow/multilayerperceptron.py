@@ -1,3 +1,5 @@
+#get the mnist data
+# wget http://deeplearning.net/data/mnist/mnist.pkl.gz
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 class MultilayerPerceptron(object):
@@ -15,14 +17,17 @@ class MultilayerPerceptron(object):
     def load(self):
         self.mnist = input_data.read_data_sets("./mnist/", one_hot=True)
 
-    def forword(self,x,weights,biases):
+    def create_model(self,x,weights,biases):
         layer_1=tf.add(tf.matmul(x,weights['h1']),biases['b1'])
         layer_1=tf.nn.relu(layer_1)
 
         layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
         layer_2 = tf.nn.relu(layer_2)
 
-        out_layer=tf.add(tf.matmul(layer_2,weights['out']),biases['out'])
+        layer_3=tf.add(tf.matmul(layer_2,weights['h3']),biases['b3'])
+        layer_3=tf.nn.relu(layer_3)
+
+        out_layer=tf.add(tf.matmul(layer_3,weights['out']),biases['out'])
         return out_layer
 
     def run(self):
@@ -35,18 +40,18 @@ class MultilayerPerceptron(object):
             # you can change
             'h1': tf.Variable(tf.random_normal([self.n_input, self.n_hidden_1])),
             'h2': tf.Variable(tf.random_normal([self.n_hidden_1, self.n_hidden_2])),
-            # 'h3': tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2])),
+            'h3':tf.Variable(tf.random_normal([self.n_hidden_1,self.n_hidden_2])),
             'out': tf.Variable(tf.random_normal([self.n_hidden_2, self.n_classes]))
         }
         biases = {
             'b1': tf.Variable(tf.random_normal([self.n_hidden_1])),
             'b2': tf.Variable(tf.random_normal([self.n_hidden_2])),
-            # 'b3': tf.Variable(tf.random_normal([n_hidden_2])),
+            'b3':tf.Variable(tf.random_normal([self.n_hidden_2])),
             'out': tf.Variable(tf.random_normal([self.n_classes]))
         }
 
         # Construct model
-        pred = self.forword(x, weights, biases)
+        pred = self.create_model(x, weights, biases)
 
         # Define loss and optimizer
         cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))
