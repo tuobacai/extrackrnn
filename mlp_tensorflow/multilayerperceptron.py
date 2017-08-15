@@ -24,6 +24,8 @@ class MultilayerPerceptron(object):
 
         layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
         layer_2 = tf.nn.relu(layer_2)
+        layer_2=tf.nn.dropout(layer_2,0.75)
+
 
         layer_3=tf.add(tf.matmul(layer_2,weights['h3']),biases['b3'])
         layer_3=tf.nn.relu(layer_3)
