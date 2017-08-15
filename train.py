@@ -49,18 +49,18 @@ class LargeConfig(object):
     vocab_size = 50000
 
 class MediumConfig(object):
-    learning_rate = 0.5
-    init_scale = 0.04
-    learning_rate_decay_factor = 0.99
-    max_gradient_norm = 5.0
+    learning_rate = 0.5  # 学习速率,在文本循环次数超过max_epoch以后会逐渐降低
+    init_scale = 0.04    # 相关参数的初始值为随机均匀分布，范围是[-init_scale,+init_scale]
+    learning_rate_decay_factor = 0.99  # 学习速率衰减
+    max_gradient_norm = 5.0     # 用于控制梯度膨胀，如果梯度向量的L2模超过max_grad_norm，则等比例缩小
     num_samples = 2048 # Sampled Softmax
-    batch_size = 64
+    batch_size = 64   # 每批数据的规模，每批有64个
     size = 64 # Number of Node of each layer
-    num_layers = 2
-    vocab_size = 10000
+    num_layers = 2    # lstm层数
+    vocab_size = 10000  # 词典规模，总共10K个词
 
-config = LargeConfig() # new Large Config, set to tf.app.flags
-# config = MediumConfig()
+# config = LargeConfig() # new Large Config, set to tf.app.flags
+config = MediumConfig()
 
 tf.app.flags.DEFINE_float("learning_rate", config.learning_rate, "Learning rate.")
 tf.app.flags.DEFINE_float("learning_rate_decay_factor", config.learning_rate_decay_factor, "Learning rate decays by this much.")
