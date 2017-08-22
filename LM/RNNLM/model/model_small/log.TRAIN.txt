@@ -1,0 +1,77 @@
+INFO:root:======== FLAGS ========
+INFO:root:vocab_size=100
+INFO:root:learning_rate_decay_factor=0.83
+INFO:root:dump_lstm_output=dump_lstm.pb
+INFO:root:test_path=./test
+INFO:root:keep_prob=0.5
+INFO:root:patience=10
+INFO:root:num_layers=2
+INFO:root:size=20
+INFO:root:saved_model_dir=../model/model_small/saved_model
+INFO:root:print_beam=False
+INFO:root:dev_path=../data/small/valid
+INFO:root:model_dir=../model/model_small
+INFO:root:summary_dir=../model/model_small/saved_model
+INFO:root:force_decode_output=force_decode.txt
+INFO:root:beam_step=3
+INFO:root:profile=False
+INFO:root:saveCheckpoint=True
+INFO:root:fromScratch=True
+INFO:root:learning_rate=0.5
+INFO:root:L=15
+INFO:root:batch_size=4
+INFO:root:N=000
+INFO:root:topk=3
+INFO:root:data_cache_dir=../model/model_small/data_cache
+INFO:root:max_gradient_norm=5.0
+INFO:root:no_repeat=False
+INFO:root:n_bucket=3
+INFO:root:allow_growth=False
+INFO:root:withAdagrad=True
+INFO:root:mode=TRAIN
+INFO:root:beam_size=10
+INFO:root:train_path=../data/small/train
+INFO:root:n_epoch=100
+INFO:root:======== READ DATA ========
+INFO:root:======== REPORT ========
+INFO:root:real_vocab_size: 30
+INFO:root:_buckets: [6, 10, 15]
+INFO:root:Train:
+INFO:root:total: 655.0
+INFO:root:bucket sizes: [205, 205, 245]
+INFO:root:Dev:
+INFO:root:total: 61
+INFO:root:bucket sizes: [19, 20, 22]
+INFO:root:Steps_per_epoch: 163
+INFO:root:Total_steps:16300
+INFO:root:Steps_per_checkpoint: 81
+INFO:root:======== IN TENSORFLOW ========
+INFO:root:======== MODEL/SUMMARY/WRITER ========
+INFO:root:Creating Model.. (this can take a few minutes)
+INFO:root:Created model with fresh parameters.
+INFO:root:Creating ModelSummary
+INFO:root:Creating tf.summary.FileWriter
+INFO:root:======== All Variables ========
+INFO:root:Variable:0
+INFO:root:Variable_1:0
+INFO:root:Variable_2:0
+INFO:root:input_embeddiing:0
+INFO:root:output_embeddiing:0
+INFO:root:output_bias:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/weights:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/biases:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/weights:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/biases:0
+INFO:root:input_embeddiing/Adagrad:0
+INFO:root:output_embeddiing/Adagrad:0
+INFO:root:output_bias/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/weights/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/biases/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/weights/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/biases/Adagrad:0
+INFO:root:======== Data Iterators ========
+INFO:root:Itetype: withRandom
+INFO:root:======== TRAIN ========
+INFO:root:[STEP 30] StepTime: 0.06 sec Speed: 491.10 targets/s Total_targets: 5940
+INFO:root:[STEP 60] StepTime: 0.02 sec Speed: 1328.06 targets/s Total_targets: 5940
+INFO:root:[CHECKPOINT 1 STEP 81] Learning_rate: 0.5000 Dev_ppx: 25.40 Train_ppx: 27.12

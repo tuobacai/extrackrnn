@@ -1,0 +1,181 @@
+INFO:root:======== FLAGS ========
+INFO:root:vocab_size=10000
+INFO:root:learning_rate_decay_factor=0.83
+INFO:root:dump_lstm_output=dump_lstm.pb
+INFO:root:test_path=../data/small/test
+INFO:root:keep_prob=0.5
+INFO:root:patience=10
+INFO:root:num_layers=2
+INFO:root:size=20
+INFO:root:saved_model_dir=../model/model_small/saved_model
+INFO:root:print_beam=False
+INFO:root:dev_path=./dev
+INFO:root:model_dir=../model/model_small
+INFO:root:summary_dir=../model/model_small/saved_model
+INFO:root:force_decode_output=force_decode.txt
+INFO:root:beam_step=3
+INFO:root:profile=False
+INFO:root:saveCheckpoint=False
+INFO:root:fromScratch=True
+INFO:root:learning_rate=0.5
+INFO:root:L=15
+INFO:root:batch_size=64
+INFO:root:N=000
+INFO:root:topk=3
+INFO:root:data_cache_dir=../model/model_small/data_cache
+INFO:root:max_gradient_norm=5.0
+INFO:root:no_repeat=False
+INFO:root:n_bucket=3
+INFO:root:allow_growth=False
+INFO:root:withAdagrad=True
+INFO:root:mode=FORCE_DECODE
+INFO:root:beam_size=10
+INFO:root:train_path=./train
+INFO:root:n_epoch=100
+INFO:root:
+WARNING: 
+ 1. The output file and original file may not align one to one, because we remove the lines whose lenght exceeds the maximum length set by -L 
+ 2. The score is -sum(log(p)) with base e and includes EOS. 
+
+INFO:root:======== READ DATA ========
+INFO:root:======== REPORT ========
+INFO:root:real_vocab_size: 30
+INFO:root:_buckets:[7, 9, 15]
+INFO:root:FORCE_DECODE:
+INFO:root:total: 56
+INFO:root:bucket_sizes: [19, 9, 28]
+INFO:root:======== IN TENSORFLOW ========
+INFO:root:Creating Model
+INFO:root:Reading model parameters from ../model/model_small/saved_model/model-29
+INFO:root:======== All Variables ========
+INFO:root:Variable:0
+INFO:root:Variable_1:0
+INFO:root:Variable_2:0
+INFO:root:input_embeddiing:0
+INFO:root:output_embeddiing:0
+INFO:root:output_bias:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/weights:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/biases:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/weights:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/biases:0
+INFO:root:input_embeddiing/Adagrad:0
+INFO:root:output_embeddiing/Adagrad:0
+INFO:root:output_bias/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/weights/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_0/lstm_cell/biases/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/weights/Adagrad:0
+INFO:root:rnn/multi_rnn_cell/cell_1/lstm_cell/biases/Adagrad:0
+INFO:root:======== Data Iterators ========
+INFO:root:======== FORCE_DECODING ========
+INFO:root:--- decoding 0/56 sent ---
+INFO:root:LOSS: 24.9413299561
+INFO:root:--- decoding 1/56 sent ---
+INFO:root:LOSS: 38.914264679
+INFO:root:--- decoding 2/56 sent ---
+INFO:root:LOSS: 35.859588623
+INFO:root:--- decoding 3/56 sent ---
+INFO:root:LOSS: 39.3812103271
+INFO:root:--- decoding 4/56 sent ---
+INFO:root:LOSS: 25.940114975
+INFO:root:--- decoding 5/56 sent ---
+INFO:root:LOSS: 18.7115478516
+INFO:root:--- decoding 6/56 sent ---
+INFO:root:LOSS: 42.022518158
+INFO:root:--- decoding 7/56 sent ---
+INFO:root:LOSS: 4.99355792999
+INFO:root:--- decoding 8/56 sent ---
+INFO:root:LOSS: 22.0445289612
+INFO:root:--- decoding 9/56 sent ---
+INFO:root:LOSS: 22.219329834
+INFO:root:--- decoding 10/56 sent ---
+INFO:root:LOSS: 36.0660858154
+INFO:root:--- decoding 11/56 sent ---
+INFO:root:LOSS: 4.95251655579
+INFO:root:--- decoding 12/56 sent ---
+INFO:root:LOSS: 29.2963600159
+INFO:root:--- decoding 13/56 sent ---
+INFO:root:LOSS: 5.34303998947
+INFO:root:--- decoding 14/56 sent ---
+INFO:root:LOSS: 15.5256328583
+INFO:root:--- decoding 15/56 sent ---
+INFO:root:LOSS: 21.8209571838
+INFO:root:--- decoding 16/56 sent ---
+INFO:root:LOSS: 19.0025844574
+INFO:root:--- decoding 17/56 sent ---
+INFO:root:LOSS: 22.4974689484
+INFO:root:--- decoding 18/56 sent ---
+INFO:root:LOSS: 14.9691953659
+INFO:root:--- decoding 19/56 sent ---
+INFO:root:LOSS: 8.52454376221
+INFO:root:--- decoding 20/56 sent ---
+INFO:root:LOSS: 42.8625259399
+INFO:root:--- decoding 21/56 sent ---
+INFO:root:LOSS: 18.205871582
+INFO:root:--- decoding 22/56 sent ---
+INFO:root:LOSS: 39.7213554382
+INFO:root:--- decoding 23/56 sent ---
+INFO:root:LOSS: 8.5593290329
+INFO:root:--- decoding 24/56 sent ---
+INFO:root:LOSS: 46.2851638794
+INFO:root:--- decoding 25/56 sent ---
+INFO:root:LOSS: 15.6815052032
+INFO:root:--- decoding 26/56 sent ---
+INFO:root:LOSS: 46.1174049377
+INFO:root:--- decoding 27/56 sent ---
+INFO:root:LOSS: 29.0699901581
+INFO:root:--- decoding 28/56 sent ---
+INFO:root:LOSS: 12.4312705994
+INFO:root:--- decoding 29/56 sent ---
+INFO:root:LOSS: 35.9072494507
+INFO:root:--- decoding 30/56 sent ---
+INFO:root:LOSS: 43.0668640137
+INFO:root:--- decoding 31/56 sent ---
+INFO:root:LOSS: 46.2044754028
+INFO:root:--- decoding 32/56 sent ---
+INFO:root:LOSS: 28.3056964874
+INFO:root:--- decoding 33/56 sent ---
+INFO:root:LOSS: 42.5053482056
+INFO:root:--- decoding 34/56 sent ---
+INFO:root:LOSS: 34.9095458984
+INFO:root:--- decoding 35/56 sent ---
+INFO:root:LOSS: 26.1607818604
+INFO:root:--- decoding 36/56 sent ---
+INFO:root:LOSS: 18.9639587402
+INFO:root:--- decoding 37/56 sent ---
+INFO:root:LOSS: 35.7317504883
+INFO:root:--- decoding 38/56 sent ---
+INFO:root:LOSS: 35.8398857117
+INFO:root:--- decoding 39/56 sent ---
+INFO:root:LOSS: 43.3822555542
+INFO:root:--- decoding 40/56 sent ---
+INFO:root:LOSS: 42.1676940918
+INFO:root:--- decoding 41/56 sent ---
+INFO:root:LOSS: 36.1572380066
+INFO:root:--- decoding 42/56 sent ---
+INFO:root:LOSS: 9.82143592834
+INFO:root:--- decoding 43/56 sent ---
+INFO:root:LOSS: 4.95251655579
+INFO:root:--- decoding 44/56 sent ---
+INFO:root:LOSS: 18.8022003174
+INFO:root:--- decoding 45/56 sent ---
+INFO:root:LOSS: 42.4369049072
+INFO:root:--- decoding 46/56 sent ---
+INFO:root:LOSS: 5.15102672577
+INFO:root:--- decoding 47/56 sent ---
+INFO:root:LOSS: 18.1557579041
+INFO:root:--- decoding 48/56 sent ---
+INFO:root:LOSS: 35.2117576599
+INFO:root:--- decoding 49/56 sent ---
+INFO:root:LOSS: 22.1173992157
+INFO:root:--- decoding 50/56 sent ---
+INFO:root:LOSS: 18.775220871
+INFO:root:--- decoding 51/56 sent ---
+INFO:root:LOSS: 39.3505096436
+INFO:root:--- decoding 52/56 sent ---
+INFO:root:LOSS: 32.3224525452
+INFO:root:--- decoding 53/56 sent ---
+INFO:root:LOSS: 46.8325424194
+INFO:root:--- decoding 54/56 sent ---
+INFO:root:LOSS: 24.6858940125
+INFO:root:--- decoding 55/56 sent ---
+INFO:root:LOSS: 40.2818412781
